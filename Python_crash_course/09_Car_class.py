@@ -15,6 +15,7 @@ class Car:
     # Adding method to update the odometer reading
     def update_odometer_reading(self):
 
+        # Making it possible to update the odometer reading from the input
         mileage = int(input("Enter the cars current odometer reading: "))
 
         self.odometer_reading = mileage
@@ -23,6 +24,10 @@ class Car:
             print(f"This car has an updated odometer reading of: {mileage}")
         else:
             print("You can't roll back the odometer reading!!")
+
+    # Parent method to be overridden in the child class
+    def fill_gas_tank(self):
+        print("This is a placeholder to override in the child class")
     
 
 my_new_car = Car('Volkswagen', 'Multivan', 2022)
@@ -42,6 +47,9 @@ class ElectricCar(Car):
 
     def describe_battery(self):
         print(f"The battery for this {self.model} is a {self.battery_size}-kWh one")
+
+    def fill_gas_tank(self):
+        print("An electric car does not need to fill the gas tank")
 
 my_kia = ElectricCar('kia', 'ev3', '2020')
 print(my_kia.get_descriptive_name())
