@@ -14,3 +14,12 @@ with open(filename) as file_obj:
 with open(filename) as file_obj:
     for line in file_obj:
         print(line.rstrip())
+
+# Can save the file in a list to use it later.
+# Otherwise it can only be used inside the "with" block of code
+
+with open(filename) as f_obj:
+    lines = f_obj.readlines()
+
+    for line in lines:
+        print(line.rstrip())
