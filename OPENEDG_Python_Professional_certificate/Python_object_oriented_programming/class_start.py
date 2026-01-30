@@ -10,9 +10,13 @@ class Hero:
 
 
     # Creating a property that isn't available to other classes
+    # So like a private variable
     __herolist = None
 
     # TODO : Creating a class method
+    # class method decorator, instead of an object as the first argument
+    # this receives the class as the first argument
+    # cls = CLASS
     @classmethod
     def get_hero_types(cls):
         return cls.HERO_TYPES
